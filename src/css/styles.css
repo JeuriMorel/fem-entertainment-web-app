@@ -23,19 +23,18 @@
     --fw-light: 300;
     --fw-medium: 500;
 
-    --padding-nav: clamp(1rem, 0.472rem + 2.254vw, 2.5rem);
-
     --nav-link-gap: clamp(1.5rem, 1.148rem + 1.502vw, 2.5rem);
     --nav-link-width: clamp(1rem, 0.761rem + 1.018vw, 1.25rem);
 
     --opacity-light-text: 0.75;
     --opacity-extra-light-text: 0.5;
-    --border-radius: 0.5rem;
+    --border-radius-header: 0.5rem;
 
     --padding-sm: 0.5rem;
     --padding-sm-tab: clamp(var(--padding-sm), 0.023rem + 2.036vw, 1rem);
     --padding-base: 1rem;
     --padding-base-desk: clamp(var(--padding-base), 0.5rem + 2vw, 2.5rem);
+    --padding-header: clamp(var(--padding-base), 0.5rem + 2vw, 1.75rem);
 
     --padding-md: 1.5rem;
 
@@ -47,10 +46,13 @@ body {
     color: var(--clr-white);
     background-color: var(--clr-brand-100);
     font-weight: var(--fw-light);
+}
+
+#root {
     display: flex;
+    min-height: 100vh;
     flex-direction: var(--flex-direction-body);
     @media (width > 1100px) {
-        --border-radius: 1.25rem;
         --flex-direction-body: row;
         --flex-direction-header: column;
     }
@@ -72,32 +74,61 @@ h6 {
 
 header {
     --link-width: 1rem;
-    --border-radius: 0;
+    --border-radius-header: 0;
+    --major-axis: min(100%, clamp(720px, 100vw, 960px));
     background-color: var(--clr-brand-200);
+    writing-mode: var(--writing-mode, horizontal-tb);
     color: var(--clr-brand-700);
-    padding: var(--padding-base-desk);
+    padding: var(--padding-header);
     display: flex;
-    inline-size: min(100%, clamp(720px, 100%, 960px));
-    flex-direction: var(--flex-direction-header);
+    justify-content: space-between;
+    align-items: center;
+    width: var(--major-axis);
+    margin-inline: auto;
+    margin-block-end: 1.5rem;
+    border-radius: var(--border-radius-header);
+
+    & .avatar-container {
+        border-radius: 50%;
+        border: 1px solid var(--clr-white);
+    }
+
+    & img {
+        width: clamp(1.5rem, 1rem + 2vw, var(--image-max-width, 2rem));
+    }
+
+    & .avatar {
+        --image-max-width: 2.5rem;
+        margin-top: auto;
+    }
 
     @media (width > 768px) {
-        --border-radius: 0.625rem;
+        --border-radius-header: 0.625rem;
         --link-width: 1.25rem;
+        margin-block: 2rem;
     }
     @media (width > 1100px) {
-        writing-mode: horizontal-tb;
-        --border-radius: 1.25rem;
-    }
-    @media (width > 1440px) {
-        --border-radius: 1.25rem;
+        --writing-mode: vertical-rl;
+        --border-radius-header: 1.25rem;
+        margin-inline-start: 2rem;
+        width: auto;
+        height: var(--major-axis);
     }
 }
 
 nav {
     display: flex;
-    flex-direction: var(--flex-direction-header);
+    gap: var(--nav-link-gap);
 
     & a {
         width: var(--link-width);
     }
+}
+
+main {
+    padding: var(--padding-base-desk);
+}
+
+.card {
+    padding: var(--padding-sm-tab);
 }
