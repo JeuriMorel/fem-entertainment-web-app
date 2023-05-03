@@ -1,0 +1,58 @@
+:root {
+    --clr-accent: hsl(0, 97%, 63%);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-brand-100: hsl(223, 30%, 9%);
+    --clr-brand-200: hsl(223, 36%, 14%);
+    --clr-brand-700: hsl(223, 23%, 46%);
+
+    --ff-primary: "Outfit", sans-serif;
+
+    --fs-sm: 0.8125rem; /* 13px*/
+    --fs-base: 1rem; /* 16px*/
+    --fs-md: 1.125rem; /* 18px*/
+    --fs-lg: 1.25rem; /* 20px*/
+    --fs-xl: 1.5rem; /* 24px*/
+    --fs-xxl: 2rem; /* 32px*/
+
+    --fs-heading: clamp(var(--fs-lg), 0.5rem + 3vw, var(--fs-xxl));
+    --lh-heading: clamp(1.563rem, 0.668rem + 3.817vw, 2.5rem);
+
+    --fs-placeholder: clamp(1rem, 0.523rem + 2.036vw, 1.5rem);
+    --lh-placeholder: clamp(1.25rem, 0.654rem + 2.545vw, 1.875rem);
+
+    --fw-light: 300;
+    --fw-medium: 500;
+
+    --nav-link-gap: clamp(1.5rem, 1.148rem + 1.502vw, 2.5rem);
+    --nav-link-width: clamp(1rem, 0.761rem + 1.018vw, 1.25rem);
+
+    --opacity-light-text: 0.75;
+    --opacity-extra-light-text: 0.5;
+    --border-radius-header: 0.5rem;
+
+    --padding-sm: 0.5rem;
+    --padding-sm-tab: clamp(var(--padding-sm), 0.023rem + 2.036vw, 1rem);
+    --padding-base: 1rem;
+    --padding-base-desk: clamp(var(--padding-base), 0.5rem + 2vw, 2.5rem);
+    --padding-header: clamp(var(--padding-base), 0.5rem + 2vw, 1.75rem);
+
+    --padding-md: 1.5rem;
+
+    --flex-direction-body: column;
+}
+
+body {
+    color: var(--clr-white);
+    background-color: var(--clr-brand-100);
+    font-weight: var(--fw-light);
+    font-family: var(--ff-primary);
+}
+
+#root {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: var(--flex-direction-body);
+    @media (width > 1100px) {
+        --flex-direction-body: row;
+    }
+}
