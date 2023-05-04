@@ -1,8 +1,6 @@
 @import "reset.css";
-@import 'root.css';
-@import 'header.css';
-
-
+@import "root.css";
+@import "header.css";
 
 h1,
 h2,
@@ -20,6 +18,54 @@ h6 {
 
 main {
     padding: var(--padding-base-desk);
+    width: 100%;
+}
+
+:not(:placeholder-shown) + label {
+    left: 100%;
+}
+
+form {
+    --gap: clamp(var(--fs-base), 0.5rem + 2vw, var(--fs-xl));
+    --fs-input: clamp(var(--fs-base), 0.5rem + 2vw, var(--fs-xl));
+    --lh-input: clamp(1.25rem, 0.654rem + 2.545vw, 1.875rem);
+    --icon-width: clamp(var(--fs-xl), 1rem + 2vw, var(--fs-xxl));
+
+    display: flex;
+    align-items: center;
+    padding-right: 36px;
+    gap: var(--gap);
+    color: var(--clr-white);
+    position: relative;
+    overflow: hidden;
+    font-size: var(--fs-input);
+    line-height: var(--lh-input);
+
+    & img {
+        width: var(--icon-width);
+    }
+
+    & label {
+        position: absolute;
+        opacity: var(--opacity-extra-light-text);
+        transition: opacity 300ms ease-in;
+        left: calc(var(--icon-width) + var(--gap));
+        /* opacity: 0; */
+    }
+
+    & input {
+        background-color: transparent;
+        border: 1px solid transparent;
+        outline: none;
+        color: inherit;
+        width: 100%;
+        padding-block: var(--fs-base);
+        caret-color: var(--clr-accent);
+
+        &:is(:hover, :focus-visible) {
+            border-bottom-color: var(--clr-brand-700);
+        }
+    }
 }
 
 .card {

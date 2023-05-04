@@ -17,8 +17,7 @@
     --fs-heading: clamp(var(--fs-lg), 0.5rem + 3vw, var(--fs-xxl));
     --lh-heading: clamp(1.563rem, 0.668rem + 3.817vw, 2.5rem);
 
-    --fs-placeholder: clamp(1rem, 0.523rem + 2.036vw, 1.5rem);
-    --lh-placeholder: clamp(1.25rem, 0.654rem + 2.545vw, 1.875rem);
+    
 
     --fw-light: 300;
     --fw-medium: 500;
@@ -51,6 +50,7 @@ body {
 #root {
     display: flex;
     min-height: 100vh;
+    align-items: center;
     flex-direction: var(--flex-direction-body);
     @media (width > 1100px) {
         --flex-direction-body: row;

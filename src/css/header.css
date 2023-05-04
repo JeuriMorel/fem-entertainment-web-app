@@ -10,8 +10,8 @@ header {
     justify-content: space-between;
     align-items: center;
     width: var(--major-axis);
-    margin-inline: auto;
-    margin-block-end: 1.5rem;
+    /* margin-inline: auto; */
+    /* margin-block-end: 1.5rem; */
     border-radius: var(--border-radius-header);
 
     & .avatar-container {
