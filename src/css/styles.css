@@ -28,12 +28,12 @@ main {
 form {
     --gap: clamp(var(--fs-base), 0.5rem + 2vw, var(--fs-xl));
     --fs-input: clamp(var(--fs-base), 0.5rem + 2vw, var(--fs-xl));
-    --lh-input: clamp(1.25rem, 0.654rem + 2.545vw, 1.875rem);
+    --lh-input: clamp(var(--fs-lg), 0.65rem + 2.55vw, 1.875rem);
     --icon-width: clamp(var(--fs-xl), 1rem + 2vw, var(--fs-xxl));
 
     display: flex;
     align-items: center;
-    padding-right: 36px;
+    /* padding-right: 36px; */
     gap: var(--gap);
     color: var(--clr-white);
     position: relative;
@@ -41,16 +41,15 @@ form {
     font-size: var(--fs-input);
     line-height: var(--lh-input);
 
-    & img {
+    /* & svg {
         width: var(--icon-width);
-    }
+        aspect-ratio: 1;
+    } */
 
     & label {
         position: absolute;
         opacity: var(--opacity-extra-light-text);
-        transition: opacity 300ms ease-in;
         left: calc(var(--icon-width) + var(--gap));
-        /* opacity: 0; */
     }
 
     & input {
