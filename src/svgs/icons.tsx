@@ -123,9 +123,7 @@ export const icons = {
     ),
     logo: (
         <svg
-            // width="33"
-            // height="27"
-            viewBox="0 0 33 27"
+            viewBox="0 0 33 25"
             xmlns="http://www.w3.org/2000/svg"
         >
             <path

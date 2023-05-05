@@ -1,5 +1,5 @@
 header {
-    --link-width: 1rem;
+    --link-width: clamp(1rem, 0.7615rem + 1.0178vw, 1.25rem);;
     --border-radius-header: 0;
     --major-axis: min(100%, clamp(720px, 100vw, 960px));
     background-color: var(--clr-brand-200);
@@ -11,6 +11,10 @@ header {
     align-items: center;
     width: var(--major-axis);
     border-radius: var(--border-radius-header);
+
+    .logo-wrapper{
+        height: clamp(1.25rem, 0.95rem + 1.275vw, 1.5625rem);
+    }
 
     & .avatar-container {
         border-radius: 50%;
@@ -50,7 +54,15 @@ nav {
     gap: var(--nav-link-gap);
 
     & a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: var(--link-width);
+        aspect-ratio: 1;
+
+        & svg path {
+            transition: fill 200ms ease-in;
+        }
 
         &.current svg path{
             fill: var(--clr-white);

@@ -3,7 +3,9 @@ import { icons } from "../svgs/icons"
 function Header() {
     return (
         <header>
-            <div className="logo-wrapper" aria-hidden='true'>{icons.logo}</div>
+            <div className="logo-wrapper flex-center" aria-hidden="true">
+                {icons.logo}
+            </div>
             <nav>
                 <a href="#" aria-label="home page" className="current">
                     {icons.nav.home}
