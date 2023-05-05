@@ -41,10 +41,11 @@ form {
     font-size: var(--fs-input);
     line-height: var(--lh-input);
 
-    /* & svg {
+    .search-icon-wrapper {
         width: var(--icon-width);
         aspect-ratio: 1;
-    } */
+        overflow: hidden;
+    }
 
     & label {
         position: absolute;

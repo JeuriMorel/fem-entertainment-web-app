@@ -1,43 +1,28 @@
+import { icons } from "../svgs/icons"
+
 function Header() {
     return (
         <header>
-            <img src="/assets/logo.svg" alt="" className="logo"/>
+            <div className="logo-wrapper" aria-hidden='true'>{icons.logo}</div>
             <nav>
-                
-                    <a href="#" >
-                        <img
-                            src="/assets/icon-nav-home.svg"
-                            alt="home page"
-                        />
-                    </a>
-                
-                
-                    <a href="#" >
-                        <img
-                            src="/assets/icon-nav-movies.svg"
-                            alt="movies page"
-                        />
-                    </a>
-                
-                
-                    <a href="#" >
-                        <img
-                            src="/assets/icon-nav-tv-series.svg"
-                            alt="tv series page"
-                        />
-                    </a>
-                
-                
-                    <a href="#">
-                        <img
-                            src="/assets/icon-nav-bookmark.svg"
-                            alt="bookmarked page"
-                        />
-                    </a>
-                
+                <a href="#" aria-label="home page" className="current">
+                    {icons.nav.home}
+                </a>
+
+                <a href="#" aria-label="movies page">
+                    {icons.nav.movies}
+                </a>
+
+                <a href="#" aria-label="tv series page">
+                    {icons.nav.tv_series}
+                </a>
+
+                <a href="#" aria-label="bookmarked page">
+                    {icons.nav.bookmark}
+                </a>
             </nav>
-            <div className="avatar-container">
-                <img src="/assets/image-avatar.png" alt="" className="avatar"/>
+            <div className="avatar-container" aria-hidden="true">
+                <img src="/assets/image-avatar.png" alt="" className="avatar" />
             </div>
         </header>
     )

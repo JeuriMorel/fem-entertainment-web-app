@@ -18,7 +18,7 @@ header {
         margin-top: auto;
     }
 
-    & img {
+    & :is(.logo-wrapper, img) {
         width: clamp(1.5rem, 1rem + 2vw, var(--image-max-width, 2rem));
     }
 
@@ -46,13 +46,18 @@ header {
 
 nav {
     display: flex;
+    align-items: center;
     gap: var(--nav-link-gap);
 
     & a {
         width: var(--link-width);
 
-        &:hover img{
-            fill: red;
+        &.current svg path{
+            fill: var(--clr-white);
+        }
+
+        &:hover svg path{
+            fill: var(--clr-accent);
         }
     }
 }

@@ -1,6 +1,5 @@
 import { icons } from "../svgs/icons"
 
-
 interface SearchBarProps {
     label: string
 }
@@ -8,7 +7,7 @@ interface SearchBarProps {
 function SearchBar({ label }: SearchBarProps) {
     return (
         <form>
-            {icons.search}
+            <div className="search-icon-wrapper">{icons.search}</div>
             <input type="search" name="search" id="search" placeholder=" " />
             <label htmlFor="search">Search for {label}</label>
         </form>
