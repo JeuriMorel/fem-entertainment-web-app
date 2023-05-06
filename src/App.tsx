@@ -1,5 +1,7 @@
 import Header from "./components/Header"
 import SearchBar from "./components/SearchBar"
+import Showcase from "./components/Showcase"
+import data from "./data.json"
 
 function App() {
     enum SearchLabel {
@@ -14,6 +16,7 @@ function App() {
             <Header />
             <main>
                 <SearchBar label={SearchLabel.Home} />
+                <Showcase media={ data} />
             </main>
         </>
     )
