@@ -14,15 +14,16 @@ export type MediaDetails = {
 }
 
 interface ShowcaseProps {
-    media: MediaDetails[]
+    media_array: MediaDetails[]
+    toggleBookmarked: (title: string)=> void
 }
 
-function Showcase({ media }: ShowcaseProps) {
+function Showcase({ media_array, toggleBookmarked }: ShowcaseProps) {
     return (
         <>
             <h2 data-margin="true">Recommended for you</h2>
             <section className="showcase">
-                {media.map(
+                {media_array.map(
                     ({
                         title,
                         thumbnail,
@@ -34,7 +35,7 @@ function Showcase({ media }: ShowcaseProps) {
                         const icon_type = category == "Movie" ? "movie" : "tv"
                         return (
                             <div className="card">
-                                <button className="bookmark-icon-container flex-center">
+                                <button className="bookmark-icon-container flex-center" aria-label="toggle bookmarked status" onClick={() => toggleBookmarked(title)}>
                                     {isBookmarked
                                         ? icons.bookmark.full
                                         : icons.bookmark.empty}

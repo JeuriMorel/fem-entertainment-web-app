@@ -53,6 +53,14 @@ main {
         /* background-color: var(--clr-brand-100); */
         background-color: hsla(223, 30%, 9%, var(--brand-100-opacity, 1));
         cursor: pointer;
+
+        &:hover{
+            background-color: var(--clr-white);
+
+            & path{
+                stroke: var(--clr-brand-100);
+            }
+        }
     }
 
     .img-container {
