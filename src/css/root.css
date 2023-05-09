@@ -1,9 +1,9 @@
 :root {
-    --clr-accent: hsl(0, 97%, 63%);
-    --clr-white: hsl(0, 0%, 100%);
-    --clr-brand-100: hsl(223, 30%, 9%);
-    --clr-brand-200: hsl(223, 36%, 14%);
-    --clr-brand-700: hsl(223, 23%, 46%);
+    --clr-accent: hsla(0, 97%, 63%, var(--accent-opacity, 1));
+    --clr-white: hsla(0, 0%, 100%, var(--white-opacity, 1));
+    --clr-brand-100: hsla(223, 30%, 9%, var(--brand-100-opacity, 1));
+    --clr-brand-200: hsla(223, 36%, 14%, var(--brand-200-opacity, 1));
+    --clr-brand-700: hsla(223, 23%, 46%, var(--brand-700-opacity, 1));
 
     --ff-primary: "Outfit", sans-serif;
 
@@ -15,9 +15,7 @@
     --fs-xxl: 2rem; /* 32px*/
 
     --fs-heading: clamp(var(--fs-lg), 0.5rem + 3vw, var(--fs-xxl));
-    --lh-heading: clamp(1.563rem, 0.668rem + 3.817vw, 2.5rem);
-
-    
+    --lh-heading: 1.27;
 
     --fw-light: 300;
     --fw-medium: 500;
@@ -49,10 +47,13 @@ body {
 
 #root {
     display: flex;
+    max-width: 90rem;
     min-height: 100vh;
     align-items: center;
     flex-direction: var(--flex-direction-body);
+    margin-inline: auto;
     @media (width > 1100px) {
         --flex-direction-body: row;
+        align-items: flex-start;
     }
 }

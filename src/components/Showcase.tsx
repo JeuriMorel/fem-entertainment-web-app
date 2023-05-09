@@ -20,7 +20,7 @@ interface ShowcaseProps {
 function Showcase({ media }: ShowcaseProps) {
     return (
         <>
-            <h2>Recommended for you</h2>
+            <h2 data-margin="true">Recommended for you</h2>
             <section className="showcase">
                 {media.map(
                     ({
@@ -31,14 +31,14 @@ function Showcase({ media }: ShowcaseProps) {
                         rating,
                         isBookmarked,
                     }) => {
-                        const icon_type = category == "Movies" ? "movie" : "tv"
+                        const icon_type = category == "Movie" ? "movie" : "tv"
                         return (
                             <div className="card">
-                                <div className="bookmark-icon-container">
+                                <button className="bookmark-icon-container flex-center">
                                     {isBookmarked
                                         ? icons.bookmark.full
                                         : icons.bookmark.empty}
-                                </div>
+                                </button>
                                 <div className="img-container">
                                     <picture>
                                         <source
@@ -59,7 +59,7 @@ function Showcase({ media }: ShowcaseProps) {
                                     <p>
                                         <span>{year}</span>
                                         <span>&#183;</span>
-                                        <span>{icons.category[icon_type]}</span>
+                                        <span className="card-icon-container">{icons.category[icon_type]}</span>
                                         <span>{category}</span>
                                         <span>&#183;</span>
                                         <span>{rating}</span>

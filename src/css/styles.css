@@ -1,6 +1,7 @@
 @import "reset.css";
 @import "root.css";
 @import "header.css";
+@import "searchform.css";
 
 h1,
 h2,
@@ -9,7 +10,11 @@ h4,
 h5,
 h6 {
     font-weight: var(--fw-light);
-    margin-bottom: var(--padding-md);
+    line-height: var(--lh-heading);
+
+    &[data-margin="true"] {
+        margin-bottom: var(--padding-md);
+    }
 
     &[data-weight="medium"] {
         font-weight: var(--fw-medium);
@@ -21,74 +26,66 @@ main {
     width: 100%;
 }
 
-:not(:placeholder-shown) + label {
-    left: 100%;
-}
-
-form {
-    --gap: clamp(var(--fs-base), 0.5rem + 2vw, var(--fs-xl));
-    --fs-input: clamp(var(--fs-base), 0.5rem + 2vw, var(--fs-xl));
-    --lh-input: clamp(var(--fs-lg), 0.65rem + 2.55vw, 1.875rem);
-    --icon-width: clamp(var(--fs-xl), 1rem + 2vw, var(--fs-xxl));
-
-    display: flex;
-    align-items: center;
-    /* padding-right: 36px; */
-    gap: var(--gap);
-    color: var(--clr-white);
-    position: relative;
-    overflow: hidden;
-    font-size: var(--fs-input);
-    line-height: var(--lh-input);
-
-    .search-icon-wrapper {
-        width: var(--icon-width);
-        aspect-ratio: 1;
-        overflow: hidden;
-    }
-
-    & label {
-        position: absolute;
-        opacity: var(--opacity-extra-light-text);
-        left: calc(var(--icon-width) + var(--gap));
-    }
-
-    & input {
-        background-color: transparent;
-        border: 1px solid transparent;
-        outline: none;
-        color: inherit;
-        width: 100%;
-        padding-block: var(--fs-base);
-        caret-color: var(--clr-accent);
-
-        &:is(:hover, :focus-visible) {
-            border-bottom-color: var(--clr-brand-700);
-        }
-    }
-}
-
-.showcase{
+.showcase {
+    --cell-width: clamp(7.5rem, 2.729rem + 20.3562vw, 17.5rem);
+    --gap-col: clamp(var(--fs-base), 0.5rem + 2vw, var(--fs-xxl));
+    --gap-row: clamp(var(--fs-base), 1.4rem + 1.2vw, 2.5rem);
     display: grid;
+    column-gap: var(--gap-col);
+    row-gap: var(--gap-row);
     width: min(100%, 1240px);
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(var(--cell-width), 1fr));
 }
 
 .card {
-    padding: var(--padding-sm-tab);
     position: relative;
     isolation: isolate;
 
-    .bookmark-icon-container{
+    .bookmark-icon-container {
+        --brand-100-opacity: var(--opacity-extra-light-text);
         position: absolute;
         inset: 0 0 auto auto;
+        width: 2rem;
+        margin: clamp(0.5rem, 0.0229rem + 2.0356vw, 1rem);
+        aspect-ratio: 1;
+        border: none;
+        border-radius: 50%;
+        /* background-color: var(--clr-brand-100); */
+        background-color: hsla(223, 30%, 9%, var(--brand-100-opacity, 1));
+        cursor: pointer;
+    }
+
+    .img-container {
+        border-radius: var(--border-radius-header);
+        overflow: hidden;
+        margin-bottom: 0.5rem;
+    }
+
+    & img {
+        object-fit: cover;
+        width: 100%;
     }
 
     & p {
-        opacity: var(--opacity-light-text);
+        font-size: var(--fs-sm);
+        line-height: var(--lh-heading);
         display: flex;
         align-items: center;
         gap: 6px;
+        margin-bottom: 5px;
+
+        & span:not(.card-icon-container) {
+            opacity: var(--opacity-light-text);
+        }
+    }
+
+    .card-icon-container {
+        width: clamp(0.625rem, 0.5rem + 0.5vw, 0.75rem);
+    }
+
+    & h3 {
+        font-size: clamp(var(--fs-sm), 0.6rem + 1vw, var(--fs-md));
+        letter-spacing: 0.1px;
     }
 }
 
