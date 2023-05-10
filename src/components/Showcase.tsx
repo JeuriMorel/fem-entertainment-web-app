@@ -55,6 +55,11 @@ function Showcase({ media_array, toggleBookmarked }: ShowcaseProps) {
                                             alt=""
                                         />
                                     </picture>
+                                    <button className="play-button flex-center">
+                                        <span className="play-btn-icon-container">
+                                        {icons.play}
+                                        </span>
+                                        <span className="text">Play</span></button>
                                 </div>
                                 <div className="media-info-container">
                                     <p>

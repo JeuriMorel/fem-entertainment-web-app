@@ -1,8 +1,12 @@
 header {
-    --link-width: clamp(1rem, 0.7615rem + 1.0178vw, 1.25rem);;
+    --link-width: clamp(1rem, 0.7615rem + 1.0178vw, 1.25rem);
     --border-radius-header: 0;
     --major-axis: min(100%, clamp(720px, 100vw, 960px));
+    --top: 0;
     background-color: var(--clr-brand-200);
+    position: sticky;
+    top: var(--top);
+    z-index: 10;
     writing-mode: var(--writing-mode, horizontal-tb);
     color: var(--clr-brand-700);
     padding: var(--padding-header);
@@ -11,8 +15,10 @@ header {
     align-items: center;
     width: var(--major-axis);
     border-radius: var(--border-radius-header);
+    box-shadow: 0 -2rem 2rem 2.5rem var(--clr-brand-100);
+    margin-block: var(--top);
 
-    .logo-wrapper{
+    .logo-wrapper {
         height: clamp(1.25rem, 0.95rem + 1.275vw, 1.5625rem);
     }
 
@@ -33,7 +39,7 @@ header {
     @media (width > 768px) {
         --border-radius-header: 0.625rem;
         --link-width: 1.25rem;
-        margin-block: 2rem;
+        --top: 2rem;
     }
     @media (width > 1100px) {
         --writing-mode: vertical-rl;
@@ -42,7 +48,7 @@ header {
         width: auto;
         height: var(--major-axis);
 
-        & nav{
+        & nav {
             margin-top: 4.6875rem;
         }
     }
@@ -64,11 +70,11 @@ nav {
             transition: fill 200ms ease-in;
         }
 
-        &.current svg path{
+        &.current svg path {
             fill: var(--clr-white);
         }
 
-        &:hover svg path{
+        &:hover svg path {
             fill: var(--clr-accent);
         }
     }
