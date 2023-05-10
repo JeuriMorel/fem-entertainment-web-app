@@ -40,7 +40,6 @@ main {
 .card {
     --brand-100-opacity: var(--opacity-extra-light-text);
     --white-opacity: var(--opacity-extra-extra-light-text);
-    --transition: background-color 550ms ease-in;
     position: relative;
     isolation: isolate;
 
@@ -75,6 +74,7 @@ main {
         cursor: pointer;
 
         .play-button {
+            --trans-property: opacity;
             position: absolute;
             font-weight: var(--fw-medium);
             font-size: var(--fs-md);
@@ -91,14 +91,14 @@ main {
             border-radius: 28.5px;
             color: inherit;
             justify-content: space-between;
-            transition: opacity 350ms ease-in;
+            transition: var(--transition);
 
-            & .play-btn-icon-container{
+            & .play-btn-icon-container {
                 height: 30px;
                 width: 30px;
             }
 
-            & .text{
+            & .text {
                 margin-right: var(--fs-sm);
             }
         }
@@ -110,7 +110,7 @@ main {
                 inset: 0;
                 background-color: hsla(223, 30%, 9%, var(--brand-100-opacity));
             }
-            .play-button{
+            .play-button {
                 opacity: 1;
             }
         }

@@ -1,9 +1,14 @@
 :root {
-    --clr-accent: hsla(0, 97%, 63%, var(--accent-opacity, 1));
+    --accent-opacity: 1;
+    --brand-100-opacity: 1;
+    --brand-200-opacity: 1;
+    --brand-700-opacity: 1;
+    --white-opacity: 1;
+    --clr-accent: hsla(0, 97%, 63%, var(--accent-opacity));
     --clr-white: hsla(0, 0%, 100%, var(--white-opacity, 1));
-    --clr-brand-100: hsla(223, 30%, 9%, var(--brand-100-opacity, 1));
-    --clr-brand-200: hsla(223, 36%, 14%, var(--brand-200-opacity, 1));
-    --clr-brand-700: hsla(223, 23%, 46%, var(--brand-700-opacity, 1));
+    --clr-brand-100: hsla(223, 30%, 9%, var(--brand-100-opacity));
+    --clr-brand-200: hsla(223, 36%, 14%, var(--brand-200-opacity));
+    --clr-brand-700: hsla(223, 23%, 46%, var(--brand-700-opacity));
 
     --ff-primary: "Outfit", sans-serif;
 
@@ -37,6 +42,16 @@
     --padding-md: 1.5rem;
 
     --flex-direction-body: column;
+
+
+    /* transition */
+    --trans-duration: 250ms;
+    --trans-property: background-color;
+    --trans-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    --transition: var(--trans-property) var(--trans-duration)
+        var(--trans-timing-function);
+    
+
 }
 
 body {

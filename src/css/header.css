@@ -3,6 +3,9 @@ header {
     --border-radius-header: 0;
     --major-axis: min(100%, clamp(720px, 100vw, 960px));
     --top: 0;
+
+    
+
     background-color: var(--clr-brand-200);
     position: sticky;
     top: var(--top);
@@ -65,9 +68,10 @@ nav {
         justify-content: center;
         width: var(--link-width);
         aspect-ratio: 1;
-
+        
         & svg path {
-            transition: fill 200ms ease-in;
+            --trans-property: fill;
+            transition: var(--transition);
         }
 
         &.current svg path {
