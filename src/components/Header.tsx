@@ -9,8 +9,10 @@ function Header() {
             <nav>
                 <ul>
                     <li>
-                        <a href="#" aria-label="home page" className="current"
-                        title="home page">
+                        <a href="#" aria-label="home page"
+                            title="home page"
+                            role="link" aria-disabled="true"
+                        >
                             {icons.nav.home}
                         </a>
                     </li>

@@ -18,9 +18,9 @@ function App() {
         set_media(media_array => {
             media_array.forEach(media => {
                 if (media.title == title) {media.isBookmarked = !media.isBookmarked
-                console.log(media.title, media.isBookmarked)}
+                }
             })
-            return media_array
+            return [...media_array]
         })
     }
 

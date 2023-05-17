@@ -15,7 +15,7 @@ export type MediaDetails = {
 
 interface ShowcaseProps {
     media_array: MediaDetails[]
-    toggleBookmarked: (title: string)=> void
+    toggleBookmarked: (title: string) => void
 }
 
 function Showcase({ media_array, toggleBookmarked }: ShowcaseProps) {
@@ -35,7 +35,13 @@ function Showcase({ media_array, toggleBookmarked }: ShowcaseProps) {
                         const icon_type = category == "Movie" ? "movie" : "tv"
                         return (
                             <div className="card">
-                                <button className="bookmark-icon-container flex-center" aria-label="toggle bookmarked status" onClick={() => toggleBookmarked(title)}>
+                                <button
+                                    className="bookmark-icon-container flex-center"
+                                    aria-label="toggle bookmarked status"
+                                    onClick={() => {
+                                        toggleBookmarked(title)
+                                    }}
+                                >
                                     {isBookmarked
                                         ? icons.bookmark.full
                                         : icons.bookmark.empty}
@@ -57,15 +63,18 @@ function Showcase({ media_array, toggleBookmarked }: ShowcaseProps) {
                                     </picture>
                                     <button className="play-button flex-center">
                                         <span className="play-btn-icon-container">
-                                        {icons.play}
+                                            {icons.play}
                                         </span>
-                                        <span className="text">Play</span></button>
+                                        <span className="text">Play</span>
+                                    </button>
                                 </div>
                                 <div className="media-info-container">
                                     <p>
                                         <span>{year}</span>
                                         <span>&#183;</span>
-                                        <span className="card-icon-container">{icons.category[icon_type]}</span>
+                                        <span className="card-icon-container">
+                                            {icons.category[icon_type]}
+                                        </span>
                                         <span>{category}</span>
                                         <span>&#183;</span>
                                         <span>{rating}</span>
