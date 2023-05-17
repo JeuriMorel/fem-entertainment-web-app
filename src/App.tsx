@@ -1,8 +1,11 @@
-import Header from "./components/Header"
-import SearchBar from "./components/SearchBar"
-import Showcase, { MediaDetails } from "./components/Showcase"
+import { Routes, Route } from "react-router-dom"
+import { MediaDetails } from "./components/Showcase"
 import data from "./data.json"
 import { useState } from "react"
+import Home from "./pages/Home"
+import Movies from "./pages/Movies"
+import Header from "./components/Header"
+import Series from "./pages/Series"
 
 function App() {
     enum SearchLabel {
@@ -17,7 +20,8 @@ function App() {
     function toggleBookmarked(title: string) {
         set_media(media_array => {
             media_array.forEach(media => {
-                if (media.title == title) {media.isBookmarked = !media.isBookmarked
+                if (media.title == title) {
+                    media.isBookmarked = !media.isBookmarked
                 }
             })
             return [...media_array]
@@ -27,10 +31,48 @@ function App() {
     return (
         <>
             <Header />
-            <main>
-                <SearchBar label={SearchLabel.Home} />
-                <Showcase media_array={media_array} toggleBookmarked={ toggleBookmarked} />
-            </main>
+            <Routes>
+                <Route
+                    path="/"
+                    element={
+                        <Home
+                            label={SearchLabel.Home}
+                            toggleBookmarked={toggleBookmarked}
+                            media_array={media_array}
+                        />
+                    }
+                ></Route>
+                <Route
+                    path="/movies"
+                    element={
+                        <Movies
+                            label={SearchLabel.Movies}
+                            toggleBookmarked={toggleBookmarked}
+                            media_array={media_array.filter(media => media.category === "Movie")}
+                        />
+                    }
+                ></Route>
+                <Route
+                    path="/series"
+                    element={
+                        <Series
+                            label={SearchLabel.Series}
+                            toggleBookmarked={toggleBookmarked}
+                            media_array={media_array.filter(media => media.category === "TV Series")}
+                        />
+                    }
+                ></Route>
+                <Route
+                    path="/bookmarked"
+                    element={
+                        <Movies
+                            label={SearchLabel.Bookmarked}
+                            toggleBookmarked={toggleBookmarked}
+                            media_array={media_array.filter(media=> media.isBookmarked == true)}
+                        />
+                    }
+                ></Route>
+            </Routes>
         </>
     )
 }

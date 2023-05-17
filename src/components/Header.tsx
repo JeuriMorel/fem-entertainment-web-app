@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { icons } from "../svgs/icons"
 
 function Header() {
@@ -9,27 +10,24 @@ function Header() {
             <nav>
                 <ul>
                     <li>
-                        <a href="#" aria-label="home page"
+                        <Link to="/" aria-label="home page"
                             title="home page"
-                            role="link" aria-disabled="true"
-                        >
-                            {icons.nav.home}
-                        </a>
+                            role="link" aria-disabled="true">{icons.nav.home}</Link>
                     </li>
                     <li>
-                        <a href="#" aria-label="movies page" title="movies page">
+                        <Link to="/movies" aria-label="movies page" title="movies page">
                             {icons.nav.movies}
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#" aria-label="tv series page" title="tv series page">
+                        <Link to="/series" aria-label="tv series page" title="tv series page">
                             {icons.nav.tv_series}
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#" aria-label="bookmarked page" title="bookmark page">
+                        <Link to="/bookmarked" aria-label="bookmarked page" title="bookmark page">
                             {icons.nav.bookmark}
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </nav>
