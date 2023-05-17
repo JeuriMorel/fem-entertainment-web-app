@@ -14,6 +14,7 @@ function Movies({ label, media_array, toggleBookmarked }: MoviesProps) {
             <Showcase
                 media_array={media_array}
                 toggleBookmarked={toggleBookmarked}
+                header="Movies"
             />
         </main>
     )

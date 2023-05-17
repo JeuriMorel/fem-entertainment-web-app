@@ -16,12 +16,13 @@ export type MediaDetails = {
 interface ShowcaseProps {
     media_array: MediaDetails[]
     toggleBookmarked: (title: string) => void
+    header: string
 }
 
-function Showcase({ media_array, toggleBookmarked }: ShowcaseProps) {
+function Showcase({ media_array, toggleBookmarked, header }: ShowcaseProps) {
     return (
         <>
-            <h2 data-margin="true">Recommended for you</h2>
+            <h2 data-margin="true">{ header}</h2>
             <section className="showcase">
                 {media_array.map(
                     ({

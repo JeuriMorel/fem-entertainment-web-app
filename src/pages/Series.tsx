@@ -14,6 +14,7 @@ function Series({ label, media_array, toggleBookmarked }: SeriesProps) {
             <Showcase
                 media_array={media_array}
                 toggleBookmarked={toggleBookmarked}
+                header={"TV Series"}
             />
         </main>
     )

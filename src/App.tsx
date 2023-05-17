@@ -6,6 +6,7 @@ import Home from "./pages/Home"
 import Movies from "./pages/Movies"
 import Header from "./components/Header"
 import Series from "./pages/Series"
+import Bookmarked from "./pages/Bookmarked"
 
 function App() {
     enum SearchLabel {
@@ -65,7 +66,7 @@ function App() {
                 <Route
                     path="/bookmarked"
                     element={
-                        <Movies
+                        <Bookmarked
                             label={SearchLabel.Bookmarked}
                             toggleBookmarked={toggleBookmarked}
                             media_array={media_array.filter(media=> media.isBookmarked == true)}

@@ -14,6 +14,7 @@ function Home({ label, media_array, toggleBookmarked }: HomeProps) {
             <Showcase
                 media_array={media_array}
                 toggleBookmarked={toggleBookmarked}
+                header="Recommended for you"
             />
         </main>
     )

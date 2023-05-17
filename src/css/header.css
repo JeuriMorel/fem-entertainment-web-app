@@ -16,7 +16,7 @@ header {
     align-items: center;
     width: var(--major-axis);
     border-radius: var(--border-radius-header);
-    box-shadow: 0 -2rem 2rem 2.5rem var(--clr-brand-100);
+    box-shadow: 0 -2rem 2rem 2.25rem var(--clr-brand-100);
     margin-block: var(--top);
 
     .logo-wrapper {

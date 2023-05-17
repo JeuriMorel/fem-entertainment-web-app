@@ -13,7 +13,7 @@ h6 {
     line-height: var(--lh-heading);
 
     &[data-margin="true"] {
-        margin-bottom: var(--padding-md);
+        margin-block: var(--padding-md);
     }
 
     &[data-weight="medium"] {
@@ -34,7 +34,7 @@ main {
     column-gap: var(--gap-col);
     row-gap: var(--gap-row);
     width: min(100%, 1240px);
-    grid-template-columns: repeat(auto-fit, minmax(var(--cell-width), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(var(--cell-width), 1fr));
 }
 
 .card {
@@ -47,7 +47,7 @@ main {
         position: absolute;
         inset: 0 0 auto auto;
         width: 2rem;
-        margin: clamp(0.5rem, 0.0229rem + 2.0356vw, 1rem);
+        margin: clamp(0.5rem, 0.023rem + 2vw, 1rem);
         aspect-ratio: 1;
         border: none;
         border-radius: 50%;
