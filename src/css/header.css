@@ -72,11 +72,11 @@ nav ul {
             transition: var(--transition-fill);
         }
 
-        &[aria-disabled="true"] svg path {
+        &.active svg path {
             fill: var(--clr-white);
         }
 
-        &:hover:not([aria-disabled="true"]) svg {
+        &:hover:not(.active) svg {
             cursor: pointer;
             & path {
                 fill: var(--clr-accent);

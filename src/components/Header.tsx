@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import {  NavLink } from "react-router-dom"
 import { icons } from "../svgs/icons"
 
 function Header() {
@@ -10,24 +10,23 @@ function Header() {
             <nav>
                 <ul>
                     <li>
-                        <Link to="/" aria-label="home page"
-                            title="home page"
-                            role="link" aria-disabled="true">{icons.nav.home}</Link>
+                        <NavLink to="/" aria-label="home page"
+                            title="home page">{icons.nav.home}</NavLink>
                     </li>
                     <li>
-                        <Link to="/movies" aria-label="movies page" title="movies page">
+                        <NavLink to="/movies" aria-label="movies page" title="movies page">
                             {icons.nav.movies}
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/series" aria-label="tv series page" title="tv series page">
+                        <NavLink to="/series" aria-label="tv series page" title="tv series page">
                             {icons.nav.tv_series}
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/bookmarked" aria-label="bookmarked page" title="bookmark page">
+                        <NavLink to="/bookmarked" aria-label="bookmarked page" title="bookmark page">
                             {icons.nav.bookmark}
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
             </nav>

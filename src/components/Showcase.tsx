@@ -34,7 +34,7 @@ function Showcase({ media_array, toggleBookmarked }: ShowcaseProps) {
                     }) => {
                         const icon_type = category == "Movie" ? "movie" : "tv"
                         return (
-                            <div className="card">
+                            <div className="card" key={title}>
                                 <button
                                     className="bookmark-icon-container flex-center"
                                     aria-label="toggle bookmarked status"
