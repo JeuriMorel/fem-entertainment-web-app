@@ -26,6 +26,21 @@ main {
     width: 100%;
 }
 
+.grid-wrapper {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    & h2 {
+        position: sticky;
+        left: 0;
+    }
+}
+
 .showcase {
     --cell-width: clamp(7.5rem, 2.729rem + 20.3562vw, 17.5rem);
     --gap-col: clamp(var(--fs-base), 0.5rem + 2vw, var(--fs-xxl));
@@ -35,6 +50,15 @@ main {
     row-gap: var(--gap-row);
     width: min(100%, 1240px);
     grid-template-columns: repeat(auto-fill, minmax(var(--cell-width), 1fr));
+
+    &[data-trending="true"] {
+        --gap-col: clamp(var(--fs-base), -0.43rem + 6vw, 2.5rem);
+        --cell-width: clamp(15rem, 1.2834rem + 58.5242vw, 29.375rem);
+        /* border: 2px solid green; */
+
+        grid-auto-flow: column;
+        grid-auto-columns: var(--cell-width);
+    }
 }
 
 .card {
@@ -42,6 +66,7 @@ main {
     --white-opacity: var(--opacity-extra-extra-light-text);
     position: relative;
     isolation: isolate;
+    user-select: none;
 
     .bookmark-icon-container {
         position: absolute;

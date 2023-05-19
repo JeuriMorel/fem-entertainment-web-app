@@ -10,6 +10,7 @@ interface HomeProps {
 }
 
 function Home({ label, media_array, toggleBookmarked, input_value, filterList }: HomeProps) {
+
     const filtered_array = media_array.filter(media => {
         if (input_value === "") return true
         return media.title.toLowerCase().includes(input_value.toLowerCase())
@@ -20,6 +21,12 @@ function Home({ label, media_array, toggleBookmarked, input_value, filterList }:
     return (
         <main>
             <SearchBar label={label} onChangeFunc={ filterList} />
+            <Showcase
+                media_array={media_array.filter(media => media.isTrending)}
+                toggleBookmarked={toggleBookmarked}
+                isTrending={true}
+                header="Trending"
+            />
             <Showcase
                 media_array={filtered_array}
                 toggleBookmarked={toggleBookmarked}

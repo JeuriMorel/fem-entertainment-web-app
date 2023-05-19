@@ -66,6 +66,7 @@ body {
     background-color: var(--clr-brand-100);
     font-weight: var(--fw-light);
     font-family: var(--ff-primary);
+    overflow-x: hidden;
 }
 
 #root {

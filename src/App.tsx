@@ -82,7 +82,7 @@ function App() {
                         <Bookmarked
                             label={SearchLabel.Bookmarked}
                             toggleBookmarked={toggleBookmarked}
-                            media_array={media_array.filter(media => media.isBookmarked == true)}
+                            media_array={media_array.filter(media => media.isBookmarked)}
                             input_value={input_value}
                             filterList={filterList}
                         />

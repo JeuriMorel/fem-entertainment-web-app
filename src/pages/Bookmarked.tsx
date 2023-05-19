@@ -16,6 +16,7 @@ function Bookmarked({
     input_value,
     filterList,
 }: BookmarkedProps) {
+    
     const filtered_array = media_array.filter(media => {
         if (input_value === "") return true
         return media.title.toLowerCase().includes(input_value.toLowerCase())
