@@ -76,6 +76,29 @@ body {
     overflow-x: hidden;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: var(--fw-light);
+    line-height: var(--lh-heading);
+
+    &[data-margin="true"] {
+        margin-block: var(--padding-md);
+    }
+
+    &[data-weight="medium"] {
+        font-weight: var(--fw-medium);
+    }
+}
+
+main {
+    padding: var(--padding-base-desk);
+    width: 100%;
+}
+
 #root {
     display: flex;
     max-width: 90rem;
