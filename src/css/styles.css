@@ -39,6 +39,10 @@ main {
         position: sticky;
         left: 0;
     }
+
+    /* &:has([data-trending="true"]) {
+        cursor: grab;
+    } */
 }
 
 .showcase {
@@ -53,26 +57,43 @@ main {
 
     &[data-trending="true"] {
         --gap-col: clamp(var(--fs-base), -0.43rem + 6vw, 2.5rem);
-        --cell-width: clamp(15rem, 1.2834rem + 58.5242vw, 29.375rem);
-        /* border: 2px solid green; */
-
+        --cell-width: clamp(15rem, 1.3rem + 58.5vw, 29.375rem);
+        --cell-height: clamp(8.75rem, 3.3826rem + 23vw, 14.375rem);
         grid-auto-flow: column;
         grid-auto-columns: var(--cell-width);
+        grid-template-rows: var(--cell-height);
+
+        & .card {
+            border-radius: var(--border-radius-header);
+        }
+
+        & .img-container {
+            height: 100%;
+        }
+
+        & .media-info-container {
+            position: absolute;
+            inset: auto auto var(--card-padding) var(--card-padding);
+        }
     }
 }
 
 .card {
     --brand-100-opacity: var(--opacity-extra-light-text);
     --white-opacity: var(--opacity-extra-extra-light-text);
+    --card-padding: clamp(0.5rem, 0.023rem + 2vw, 1rem);
     position: relative;
     isolation: isolate;
     user-select: none;
+    overflow: hidden;
+    max-height: 100%;
+    width: 100%;
 
     .bookmark-icon-container {
         position: absolute;
         inset: 0 0 auto auto;
         width: 2rem;
-        margin: clamp(0.5rem, 0.023rem + 2vw, 1rem);
+        margin: var(--card-padding);
         aspect-ratio: 1;
         border: none;
         border-radius: 50%;
@@ -96,6 +117,8 @@ main {
         overflow: hidden;
         margin-bottom: 0.5rem;
         cursor: pointer;
+        max-height: 100%;
+        width: 100%;
 
         .play-button {
             position: absolute;
@@ -140,6 +163,7 @@ main {
     }
 
     & img {
+        max-height: 100%;
         object-fit: cover;
         width: 100%;
     }

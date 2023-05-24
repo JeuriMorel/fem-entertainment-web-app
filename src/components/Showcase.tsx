@@ -1,4 +1,5 @@
 import { icons } from "../svgs/icons"
+import Picture from "./Picture"
 
 export type MediaDetails = {
     title: string
@@ -26,11 +27,15 @@ function Showcase({
     header,
     isTrending = false,
 }: ShowcaseProps) {
+    
     return (
         <>
             <section className="grid-wrapper">
-            <h2 data-margin="true">{header}</h2>
-                <div className="showcase" data-trending={isTrending}>
+                <h2 data-margin="true">{header}</h2>
+                <div
+                    className="showcase"
+                    data-trending={isTrending}
+                >
                     {media_array.map(
                         ({
                             title,
@@ -56,22 +61,7 @@ function Showcase({
                                             : icons.bookmark.empty}
                                     </button>
                                     <div className="img-container">
-                                        <picture>
-                                            <source
-                                                media="(min-width: 1400px)"
-                                                srcSet={thumbnail.regular.large}
-                                            />
-                                            <source
-                                                media="(min-width: 768px)"
-                                                srcSet={
-                                                    thumbnail.regular.medium
-                                                }
-                                            />
-                                            <img
-                                                src={thumbnail.regular.small}
-                                                alt=""
-                                            />
-                                        </picture>
+                                        <Picture thumbnail={thumbnail} isTrending={isTrending} />
                                         <button className="play-button flex-center">
                                             <span className="play-btn-icon-container">
                                                 {icons.play}

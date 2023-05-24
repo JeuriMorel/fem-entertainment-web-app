@@ -47,7 +47,6 @@ function App() {
                             label={SearchLabel.Home}
                             toggleBookmarked={toggleBookmarked}
                             media_array={media_array}
-                            input_value={input_value}
                             filterList={filterList}
                         />
                     }
