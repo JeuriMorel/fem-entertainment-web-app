@@ -10,6 +10,9 @@
     --clr-brand-200: hsla(223, 36%, 14%, var(--brand-200-opacity));
     --clr-brand-700: hsla(223, 23%, 46%, var(--brand-700-opacity));
 
+    --treding-overlay-bg: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.75) 100%);
+    --trending-overlay-height: clamp(4.375rem, 2.5859rem + 7.6336vw, 6.25rem);
+
     --ff-primary: "Outfit", sans-serif;
 
     --fs-sm: 0.8125rem; /* 13px*/
@@ -34,12 +37,16 @@
     --border-radius-header: 0.5rem;
 
     --padding-sm: 0.5rem;
-    --padding-sm-tab: clamp(var(--padding-sm), 0.023rem + 2.036vw, 1rem);
     --padding-base: 1rem;
+    --padding-md: 1.5rem;
+    --padding-sm-tab: clamp(var(--padding-sm), 0.023rem + 2.036vw, var(--padding-base));
     --padding-base-desk: clamp(var(--padding-base), 0.5rem + 2vw, 2.5rem);
     --padding-header: clamp(var(--padding-base), 0.5rem + 2vw, 1.75rem);
 
-    --padding-md: 1.5rem;
+    --margin-inline-trending-bookmark: clamp(var(--padding-sm), -0.45rem + 4vw, var(--padding-md));
+
+
+    --margin-media-info: clamp(var(--padding-base), 0.5rem + 2vw, var(--padding-md));
 
     --flex-direction-body: column;
 

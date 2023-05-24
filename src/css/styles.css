@@ -67,13 +67,31 @@ main {
             border-radius: var(--border-radius-header);
         }
 
+        & .bookmark-icon-container {
+            margin-inline: var(--margin-inline-trending-bookmark);
+        }
+
         & .img-container {
             height: 100%;
+
+            &::after {
+                content: "";
+                height: var(--trending-overlay-height);
+                width: 100%;
+                background: var(--treding-overlay-bg);
+                display: block;
+                position: absolute;
+                bottom: 0;
+            }
         }
 
         & .media-info-container {
             position: absolute;
-            inset: auto auto var(--card-padding) var(--card-padding);
+            inset: auto auto var(--margin-media-info) var(--margin-media-info);
+        }
+
+        & h3 {
+            font-size: var(--margin-media-info);
         }
     }
 }
@@ -93,7 +111,8 @@ main {
         position: absolute;
         inset: 0 0 auto auto;
         width: 2rem;
-        margin: var(--card-padding);
+        margin-inline: var(--card-padding);
+        margin-block: var(--card-padding);
         aspect-ratio: 1;
         border: none;
         border-radius: 50%;
