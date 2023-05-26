@@ -2,14 +2,14 @@ import { icons } from "../svgs/icons"
 
 interface SearchBarProps {
     label: string
-    onChangeFunc: (event: any) => void
+    onSubmitFunc: (event: any) => void
 }
 
-function SearchBar({ label,onChangeFunc }: SearchBarProps) {
+function SearchBar({ label,onSubmitFunc }: SearchBarProps) {
     return (
-        <form>
+        <form onSubmit={(e)=> onSubmitFunc(e)}>
             <div className="search-icon-wrapper">{icons.search}</div>
-            <input type="search" name="search" id="search" placeholder=" " onChange={(e)=> onChangeFunc(e)}/>
+            <input type="search" name="search" id="search" placeholder=" " />
             <label htmlFor="search">Search for {label}</label>
         </form>
     )
