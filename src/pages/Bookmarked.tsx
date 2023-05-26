@@ -1,14 +1,7 @@
+import { PageProps } from "../App"
 import SearchBar from "../components/SearchBar"
-import Showcase, { MediaDetails } from "../components/Showcase"
+import Showcase from "../components/Showcase"
 
-interface BookmarkedProps {
-    label: string
-    media_array: MediaDetails[]
-    toggleBookmarked: (title: string) => void
-    input_value: string
-    filterList: (event: React.FormEvent<Element>) => void
-    show_results: boolean
-}
 
 function Bookmarked({
     label,
@@ -17,7 +10,8 @@ function Bookmarked({
     input_value,
     filterList,
     show_results,
-}: BookmarkedProps) {
+    set_input_value,set_show_results
+}: PageProps) {
     const search_results = media_array.filter(media =>
         media.title.toLowerCase().includes(input_value.toLowerCase())
     )
@@ -32,7 +26,7 @@ function Bookmarked({
     const tv_results_length = tv_search_results.length
     return (
         <main>
-            <SearchBar label={label} onSubmitFunc={filterList} />
+            <SearchBar label={label} onSubmitFunc={filterList} set_input_value={ set_input_value} set_show_results={set_show_results }/>
             {show_results ? (
                 <>
                     <Showcase
@@ -40,14 +34,14 @@ function Bookmarked({
                         toggleBookmarked={toggleBookmarked}
                         header={`Found ${movies_results_length} ${
                             movies_results_length === 1 ? "result" : "results"
-                        } for "${input_value}" in movies`}
+                        } for '${input_value}' in movies`}
                     />
                     <Showcase
                         media_array={tv_search_results}
                         toggleBookmarked={toggleBookmarked}
                         header={`Found ${tv_results_length} ${
                             tv_results_length === 1 ? "result" : "results"
-                        } for "${input_value}" in TV series`}
+                        } for '${input_value}' in TV series`}
                     />
                 </>
             ) : (

@@ -8,6 +8,17 @@ import Header from "./components/Header"
 import Series from "./pages/Series"
 import Bookmarked from "./pages/Bookmarked"
 
+export interface PageProps {
+    label: string
+    media_array: MediaDetails[]
+    toggleBookmarked: (title: string) => void
+    input_value: string
+    filterList: (event: React.FormEvent<Element>) => void
+    show_results: boolean
+    set_input_value: React.Dispatch<React.SetStateAction<string>>
+    set_show_results: React.Dispatch<React.SetStateAction<boolean>>
+}
+
 function App() {
     enum SearchLabel {
         Home = "movies or TV Series",
@@ -59,6 +70,8 @@ function App() {
                             input_value={input_value}
                             filterList={filterList}
                             show_results={show_results}
+                            set_input_value={set_input_value}
+                            set_show_results={set_show_results}
                         />
                     }
                 ></Route>
@@ -72,6 +85,8 @@ function App() {
                             input_value={input_value}
                             filterList={filterList}
                             show_results={show_results}
+                            set_input_value={set_input_value}
+                            set_show_results={set_show_results}
                         />
                     }
                 ></Route>
@@ -85,6 +100,8 @@ function App() {
                             input_value={input_value}
                             filterList={filterList}
                             show_results={show_results}
+                            set_input_value={set_input_value}
+                            set_show_results={set_show_results}
                         />
                     }
                 ></Route>
@@ -98,6 +115,8 @@ function App() {
                             input_value={input_value}
                             filterList={filterList}
                             show_results={show_results}
+                            set_input_value={set_input_value}
+                            set_show_results={set_show_results}
                         />
                     }
                 ></Route>

@@ -1,27 +1,20 @@
+import { PageProps } from "../App"
 import SearchBar from "../components/SearchBar"
-import Showcase, { MediaDetails } from "../components/Showcase"
+import Showcase from "../components/Showcase"
 
-interface MoviesProps {
-    label: string
-    media_array: MediaDetails[]
-    toggleBookmarked: (title: string) => void
-    input_value: string
-    filterList: (event: React.FormEvent<Element>) => void
-    show_results: boolean
-}
 
-function Movies({ label, media_array, toggleBookmarked, input_value, filterList,show_results }: MoviesProps) {
+function Movies({ label, media_array, toggleBookmarked, input_value, filterList,show_results, set_input_value,set_show_results }: PageProps) {
     
     const search_results = media_array.filter(media => media.title.toLowerCase().includes(input_value.toLowerCase()))
     const search_results_length = search_results.length
     return (
         <main>
-            <SearchBar label={label} onSubmitFunc={filterList} />
+            <SearchBar label={label} onSubmitFunc={filterList} set_input_value={ set_input_value} set_show_results={set_show_results }/>
             {show_results ? (
                 <Showcase
                     media_array={search_results}
                     toggleBookmarked={toggleBookmarked}
-                    header= {`Found ${search_results_length} ${search_results_length === 1 ? 'result' : "results"} for "${input_value}"`}
+                    header= {`Found ${search_results_length} ${search_results_length === 1 ? 'result' : "results"} for '${input_value}'`}
                 />
             ) : (
                 <Showcase
