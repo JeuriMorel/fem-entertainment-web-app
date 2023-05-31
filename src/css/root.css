@@ -96,7 +96,8 @@ h6 {
 
 main {
     padding: var(--padding-base-desk);
-    width: 100%;
+    max-width: 100%;
+    padding-right: 0;
 }
 
 #root {
@@ -106,6 +107,7 @@ main {
     align-items: center;
     flex-direction: var(--flex-direction-body);
     margin-inline: auto;
+    outline: 2px solid red;
     @media (min-width: 1100px) {
         --flex-direction-body: row;
         align-items: flex-start;

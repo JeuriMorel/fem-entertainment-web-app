@@ -21,8 +21,9 @@
     display: grid;
     column-gap: var(--gap-col);
     row-gap: var(--gap-row);
-    width: min(100%, 1240px);
+    width: min(100%, calc(1240px + var(--padding-base-desk)));
     grid-template-columns: repeat(auto-fill, minmax(var(--cell-width), 1fr));
+    padding-right: var(--padding-base-desk);
 
     &[data-trending="true"] {
         --gap-col: clamp(var(--fs-base), -0.43rem + 6vw, 2.5rem);

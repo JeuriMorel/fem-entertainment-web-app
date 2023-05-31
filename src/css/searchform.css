@@ -16,6 +16,7 @@ form {
     overflow: hidden;
     font-size: var(--fs-input);
     line-height: var(--lh-input);
+    max-width: min(calc(100% - var(--padding-base-desk)), 1240px);
 
     .search-icon-wrapper {
         width: var(--icon-width);
