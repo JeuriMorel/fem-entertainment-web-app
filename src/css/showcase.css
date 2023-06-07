@@ -11,7 +11,6 @@
         position: sticky;
         left: 0;
     }
-
 }
 
 .showcase {
@@ -63,8 +62,6 @@
         & h3 {
             font-size: var(--margin-media-info);
         }
-
-        
     }
 }
 
@@ -111,6 +108,10 @@
         max-height: 100%;
         width: 100%;
 
+        .grabbable & {
+            cursor: grabbing;
+        }
+
         .play-button {
             position: absolute;
             font-weight: var(--fw-medium);
@@ -137,6 +138,10 @@
 
             & .text {
                 margin-right: var(--fs-sm);
+            }
+
+            .grabbable & {
+                cursor: grabbing;
             }
         }
 
@@ -169,6 +174,10 @@
 
         & span:not(.card-icon-container) {
             opacity: var(--opacity-light-text);
+        }
+
+        .grabbable & {
+            cursor: grabbing;
         }
     }
 

@@ -12,7 +12,7 @@ function Picture({ thumbnail, isTrending }: PictureProps) {
                 media="(min-width: 768px)"
                 srcSet={thumbnail.trending?.large}
             />
-            <img src={thumbnail.trending?.small} alt="" />
+            <img src={thumbnail.trending?.small} alt="" draggable={false} />
         </picture>
     ) : (
         <picture>
@@ -24,7 +24,7 @@ function Picture({ thumbnail, isTrending }: PictureProps) {
                 media="(min-width: 768px)"
                 srcSet={thumbnail.regular.medium}
             />
-            <img src={thumbnail.regular.small} alt="" />
+            <img src={thumbnail.regular.small} alt="" draggable={false} />
         </picture>
     )
 }

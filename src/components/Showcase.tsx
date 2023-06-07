@@ -57,7 +57,7 @@ function Showcase({
         const offset = mousedown_location - clientX
 
             if (scroller.current) {
-                scroller.current.scrollLeft += offset
+                scroller.current.scrollLeft += (offset * 0.8)
                 set_mousedown_location(clientX)
             }
         
@@ -70,6 +70,7 @@ function Showcase({
                 ref={scroller}
                 onMouseDown={event => setMouseLocation(event)}
                 onMouseUp={resetsetMouseLocation}
+                onMouseLeave={resetsetMouseLocation}
                 onMouseMove={handleMouseMove}
             >
                 <h2 data-margin="true">{header}</h2>

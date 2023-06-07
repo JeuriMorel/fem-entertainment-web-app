@@ -4,6 +4,6 @@
     justify-content: center;
 }
 
-.grabbable, .grabbable > * {
+.grabbable{
     cursor: grabbing;
 }
