@@ -1,3 +1,4 @@
+import { useRef, useState } from "react"
 import { icons } from "../svgs/icons"
 import Picture from "./Picture"
 
@@ -27,14 +28,55 @@ function Showcase({
     header,
     isTrending = false,
 }: ShowcaseProps) {
-    
+    const scroller = useRef<HTMLDivElement>(null)
+    const showcase = useRef<HTMLDivElement>(null)
+    const [mousedown_location, set_mousedown_location] = useState(0)
+    const [mouse_is_down, set_mouse_is_down] = useState(false)
+
+    function setMouseLocation(event: React.MouseEvent) {
+        if (isTrending) {
+            const clientX = event.clientX
+            set_mousedown_location(clientX)
+
+            scroller.current?.classList.add('grabbable')
+            set_mouse_is_down(true)
+        }
+    }
+
+    function resetsetMouseLocation() {
+        if (isTrending) {
+            scroller.current?.classList.remove('grabbable')
+            set_mouse_is_down(false)
+            
+        }
+    }
+
+    function handleMouseMove(event: React.MouseEvent) {
+        if(!mouse_is_down) return
+        const clientX = event.clientX
+        const offset = mousedown_location - clientX
+
+            if (scroller.current) {
+                scroller.current.scrollLeft += offset
+                set_mousedown_location(clientX)
+            }
+        
+    }
+
     return (
         <>
-            <section className="grid-wrapper">
+            <section
+                className="grid-wrapper"
+                ref={scroller}
+                onMouseDown={event => setMouseLocation(event)}
+                onMouseUp={resetsetMouseLocation}
+                onMouseMove={handleMouseMove}
+            >
                 <h2 data-margin="true">{header}</h2>
                 <div
                     className="showcase"
                     data-trending={isTrending}
+                    ref={showcase}
                 >
                     {media_array.map(
                         ({
@@ -61,7 +103,10 @@ function Showcase({
                                             : icons.bookmark.empty}
                                     </button>
                                     <div className="img-container">
-                                        <Picture thumbnail={thumbnail} isTrending={isTrending} />
+                                        <Picture
+                                            thumbnail={thumbnail}
+                                            isTrending={isTrending}
+                                        />
                                         <button className="play-button flex-center">
                                             <span className="play-btn-icon-container">
                                                 {icons.play}
