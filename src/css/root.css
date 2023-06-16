@@ -50,6 +50,7 @@
     );
     --padding-base-desk: clamp(var(--padding-base), 0.5rem + 2vw, 2.5rem);
     --padding-header: clamp(var(--padding-base), 0.5rem + 2vw, 1.75rem);
+    --padding-trending-carousel: 10rem;
 
     --margin-inline-trending-bookmark: clamp(
         var(--padding-sm),
