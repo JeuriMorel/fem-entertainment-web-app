@@ -29,20 +29,19 @@ function App() {
 
     const [media_array, set_media] = useState<MediaDetails[]>(data)
 
-    const [input_value, set_input_value] = useState("");
-    const [show_results, set_show_results] = useState(false);
+    const [input_value, set_input_value] = useState("")
+    const [show_results, set_show_results] = useState(false)
 
     function filterList(event: React.FormEvent) {
         event.preventDefault()
         const target = event.target as HTMLFormElement
         const form_data = new FormData(target)
-        const search_value = form_data.get('search')
+        const search_value = form_data.get("search")
         if (typeof search_value === "string") {
             set_show_results(search_value.length > 0)
         }
 
         set_input_value(search_value as string)
-
     }
 
     function toggleBookmarked(title: string) {
@@ -59,6 +58,7 @@ function App() {
     return (
         <>
             <Header />
+            <h1 className="sr-only">Entertainment web app</h1>
             <Routes>
                 <Route
                     path="/"
@@ -81,7 +81,9 @@ function App() {
                         <Movies
                             label={SearchLabel.Movies}
                             toggleBookmarked={toggleBookmarked}
-                            media_array={media_array.filter(media => media.category === "Movie")}
+                            media_array={media_array.filter(
+                                media => media.category === "Movie"
+                            )}
                             input_value={input_value}
                             filterList={filterList}
                             show_results={show_results}
@@ -96,7 +98,9 @@ function App() {
                         <Series
                             label={SearchLabel.Series}
                             toggleBookmarked={toggleBookmarked}
-                            media_array={media_array.filter(media => media.category === "TV Series")}
+                            media_array={media_array.filter(
+                                media => media.category === "TV Series"
+                            )}
                             input_value={input_value}
                             filterList={filterList}
                             show_results={show_results}
@@ -111,7 +115,9 @@ function App() {
                         <Bookmarked
                             label={SearchLabel.Bookmarked}
                             toggleBookmarked={toggleBookmarked}
-                            media_array={media_array.filter(media => media.isBookmarked)}
+                            media_array={media_array.filter(
+                                media => media.isBookmarked
+                            )}
                             input_value={input_value}
                             filterList={filterList}
                             show_results={show_results}
