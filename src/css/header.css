@@ -50,6 +50,7 @@ header {
         --writing-mode: vertical-rl;
         --border-radius-header: 1.25rem;
         --top: 2rem;
+        margin-inline-end: 0;
         width: auto;
         height: var(--major-axis);
 
