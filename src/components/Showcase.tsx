@@ -43,7 +43,7 @@ function Showcase({
         }
     }
 
-    function resetsetMouseLocation() {
+    function resetMouseState() {
         if (isTrending) {
             scroller.current?.classList.remove('grabbable')
             set_mouse_is_down(false)
@@ -69,8 +69,8 @@ function Showcase({
                 className="grid-wrapper"
                 ref={scroller}
                 onMouseDown={event => setMouseLocation(event)}
-                onMouseUp={resetsetMouseLocation}
-                onMouseLeave={resetsetMouseLocation}
+                onMouseUp={resetMouseState}
+                onMouseLeave={resetMouseState}
                 onMouseMove={handleMouseMove}
             >
                 <h2 data-margin="true">{header}</h2>
