@@ -20,6 +20,7 @@ interface ShowcaseProps {
     toggleBookmarked: (title: string) => void
     header: string
     isTrending?: Boolean
+    isMainShowcase?: Boolean
 }
 
 function Showcase({
@@ -27,6 +28,7 @@ function Showcase({
     toggleBookmarked,
     header,
     isTrending = false,
+    isMainShowcase = false
 }: ShowcaseProps) {
     const scroller = useRef<HTMLDivElement>(null)
     const showcase = useRef<HTMLDivElement>(null)
@@ -73,7 +75,7 @@ function Showcase({
                 onMouseLeave={resetMouseState}
                 onMouseMove={handleMouseMove}
             >
-                <h2 data-margin="true">{header}</h2>
+                <h2 data-main-header={isMainShowcase}>{header}</h2>
                 <div
                     className="showcase"
                     data-trending={isTrending}

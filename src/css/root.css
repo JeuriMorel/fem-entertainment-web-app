@@ -98,8 +98,13 @@ h6 {
     font-weight: var(--fw-light);
     line-height: var(--lh-heading);
 
-    &[data-margin="true"] {
-        margin-block: var(--padding-md);
+    &[data-main-header="true"] {
+        margin-top: clamp(var(--fs-xl), 0.55rem + 4vw, 2.5rem);
+        margin-bottom: clamp(var(--fs-xl), 0.9286rem + 1.2vw, var(--fs-xxl));
+    }
+    &[data-main-header="false"] {
+        margin-top: clamp(var(--fs-xl), 0.9rem + 2.5vw, 2.125rem);
+        margin-bottom: clamp(var(--fs-base), 0.5rem + 2vw, var(--fs-xl));
     }
 
     &[data-weight="medium"] {

@@ -19,7 +19,8 @@ function Movies({ label, media_array, toggleBookmarked, input_value, filterList,
             ) : (
                 <Showcase
                 media_array={media_array}
-                toggleBookmarked={toggleBookmarked}
+                        toggleBookmarked={toggleBookmarked}
+                        isMainShowcase={true}
                 header="Movies"
             />
             )}

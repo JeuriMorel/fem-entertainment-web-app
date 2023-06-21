@@ -29,14 +29,15 @@ function Home({
                             media => media.isTrending
                         )}
                         toggleBookmarked={toggleBookmarked}
-                        isTrending={true}
+                            isTrending={true}
                         header="Trending"
                     />
                     <Showcase
                         media_array={media_array.filter(
                             media => !media.isTrending
                         )}
-                        toggleBookmarked={toggleBookmarked}
+                            toggleBookmarked={toggleBookmarked}
+                            isMainShowcase={true}
                         header="Recommended for you"
                     />
                 </>

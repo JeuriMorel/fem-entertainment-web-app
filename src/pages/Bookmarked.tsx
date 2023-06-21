@@ -50,14 +50,16 @@ function Bookmarked({
                         media_array={media_array.filter(
                             media => media.category === "Movie"
                         )}
-                        toggleBookmarked={toggleBookmarked}
+                            toggleBookmarked={toggleBookmarked}
+                            isMainShowcase={true}
                         header="Bookmarked Movies"
                     />
                     <Showcase
                         media_array={media_array.filter(
                             media => media.category === "TV Series"
                         )}
-                        toggleBookmarked={toggleBookmarked}
+                            toggleBookmarked={toggleBookmarked}
+                            isMainShowcase={true}
                         header="Bookmarked TV Series"
                     />
                 </>
