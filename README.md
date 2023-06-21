@@ -41,7 +41,7 @@ Users should be able to:
 
 ### Links
 
--   Solution URL: [Add solution URL here](https://your-solution-url.com)
+-   Solution URL: [https://www.frontendmentor.io/solutions/responsive-web-app-using-react-typescript-and-postcss-6EgxjS_kdM](https://www.frontendmentor.io/solutions/responsive-web-app-using-react-typescript-and-postcss-6EgxjS_kdM)
 -   Live Site URL: [https://fem-entertainment-web-app-six.vercel.app/](https://fem-entertainment-web-app-six.vercel.app/)
 
 ## My process
