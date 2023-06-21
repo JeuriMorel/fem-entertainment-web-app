@@ -58,7 +58,6 @@ function App() {
     return (
         <>
             <Header />
-            <h1 className="sr-only">Entertainment web app</h1>
             <Routes>
                 <Route
                     path="/"

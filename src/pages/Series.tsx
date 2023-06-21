@@ -18,6 +18,7 @@ function Series({
     const search_results_length = search_results.length
     return (
         <main>
+            <h1 className="sr-only">Entertainment web app - Series Page</h1>
             <SearchBar
                 label={label}
                 onSubmitFunc={filterList}

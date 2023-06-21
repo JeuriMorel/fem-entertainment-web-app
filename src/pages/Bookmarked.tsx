@@ -26,6 +26,7 @@ function Bookmarked({
     const tv_results_length = tv_search_results.length
     return (
         <main>
+            <h1 className="sr-only">Entertainment web app - Bookmarked Page</h1>
             <SearchBar label={label} onSubmitFunc={filterList} set_input_value={ set_input_value} set_show_results={set_show_results }/>
             {show_results ? (
                 <>

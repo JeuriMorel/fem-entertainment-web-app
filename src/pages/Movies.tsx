@@ -9,6 +9,7 @@ function Movies({ label, media_array, toggleBookmarked, input_value, filterList,
     const search_results_length = search_results.length
     return (
         <main>
+            <h1 className="sr-only">Entertainment web app - Movies Page</h1>
             <SearchBar label={label} onSubmitFunc={filterList} set_input_value={ set_input_value} set_show_results={set_show_results }/>
             {show_results ? (
                 <Showcase
