@@ -54,6 +54,7 @@ Users should be able to:
 -   CSS Grid
 -   [Vite](https://vitejs.dev/) - Build tool
 -   [React](https://reactjs.org/) - JS library
+-   [React Router](https://reactrouter.com/en/main) - Routing library in React
 -   [PostCSS](https://postcss.org/) - A tool for transforming styles with JS plugins
 -   [TypeScript](https://www.typescriptlang.org/) - A syntactic superset of JavaScript which adds static typing
 
